@@ -1,0 +1,16 @@
+body {
+  background-color: #FF4F00 ;
+}
+
+.footer {
+  text-align: center;
+}
+
+.fab {
+  color: black;
+  padding: 1% 2% ;
+}
+
+a {
+	color: currentColor ;
+}
