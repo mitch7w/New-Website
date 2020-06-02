@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   font-size: 16px;
   font-family: "Open Sans";
@@ -10,9 +14,10 @@
 
 body {
   color: black;
-  background-color: orange;
+  background-color: #ff5500;
   margin: 0;
   padding: 0;
+  font-family: 'Prompt', sans-serif;
 }
 
 /* Scrollbar styling */
@@ -28,17 +33,100 @@ body::-webkit-scrollbar-thumb {
   background: #6649b8;
 }
 
-main {
-  /* Stops navbar overlapping other content */
-  margin-top: 5rem;
-  padding: 1rem;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-primary);
 }
 
-.navbar {
-  height: 5rem ;
-  width: 100vh ;
-  position: fixed;
-  background-color: var(--bg-primary) ;
+.brand-title {
+  font-size: 1.5rem;
+  margin 0.5rem;
+  text-decoration: none;
+  color: white;
+}
+
+.brand-title a {
+  text-decoration: none;
+  padding: 1rem ;
+  display: block;
+}
+
+.brand-title:hover a {
+  background-color: #ff5500;
+}
+
+.navbar-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+.navbar-links li:hover {
+  background-color: #ff5500;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  display: block;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 30px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar {
+    flex: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-links li {
+    text-align: center;
+  }
+
+  .navbar-links a {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
 }
 
 .textBlock {
@@ -56,4 +144,5 @@ main {
 
 a {
   color: currentColor;
+  text-decoration: none;
 }

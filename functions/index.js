@@ -30,6 +30,6 @@ app.get("/about", function (req, res) {
   res.render("about");
 });
 
-app.listen(process.env.PORT || 3000, function (req, res) {
+app.listen(3000, function (req, res) {
   console.log("App Listening on port 3000");
 });
