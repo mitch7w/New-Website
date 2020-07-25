@@ -1,7 +1,25 @@
-const express = require("express")
-const app = express()
-const ejs = require("ejs")
-const bodyParser = require("body-parser")
+//jshint esversion:6
+require("dotenv").config() ; // environment file
+const express = require("express");
+const app = express();
+const ejs = require("ejs");
+const bodyParser = require("body-parser") ;
+const mongoose = require("mongoose") ;
+
+
+mongoose.connect(process.env.MONGOURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+const postSchema = {
+  title: String,
+  content: String,
+  description: String, 
+  date: String
+} ;
+
+const Post = mongoose.model("Post", postSchema);
 
 app.set("view engine", "ejs");
 
@@ -19,8 +37,34 @@ app.get("/vlog", function (req, res) {
 });
 
 app.get("/blog", function (req, res) {
-  res.render("blog");
+  Post.find({}, function(err, foundPosts) { // find all blog posts
+    if(err) {
+      console.log("Error:" + err);
+    }
+    else {
+      console.log("DB read successfully");
+      res.render("blog", {posts : foundPosts});
+    }
+  }) ;
 });
+
+app.get("/blog/:postTitle", function (req, res) {
+  const requestedPostTitle = req.params.postTitle ;
+  Post.findOne({title:requestedPostTitle}, function(err,post) {
+    if(err || post === null) { // No such post exists
+      res.redirect("/pageNotFound");
+    }
+    else { // post now contains correct post to post
+
+      res.render("blogPost", {
+        title: post.title,
+        content: post.content,
+        date: post.date
+      }) ;
+    }
+  }) ;
+});
+
 
 app.get("/portfolio", function (req, res) {
   res.render("portfolio");
@@ -28,6 +72,9 @@ app.get("/portfolio", function (req, res) {
 
 app.get("/about", function (req, res) {
   res.render("about");
+});
+app.get("/pageNotFound", function (req, res) {
+  res.render("pageNotFound");
 });
 
 app.listen(process.env.PORT || 3000, function (req, res) {

@@ -1,11 +1,11 @@
 <%- include("partials/header") ; -%>
 <div class="textBlock">
-  <h1>Coming soon...</h1>
-  <p>Longer more thought-out musings about life, technology and stuff.</p>
-  <!-- <ul>
-    <li>First blog post</li>
-    <li>second blog post</li>
-    <li>third blog post</li>
-  </ul> -->
+  <h1>Blog</h1>
+  <h2>Longer more thought-out musings about life, technology and stuff.</h2>
+    <% posts.forEach(function(post) { %>
+     <a href="/blog/<%=post.title%>"><%=post.title%></a>
+    <!-- Date, description and link to read whole post -->
+    <% }) %>
+  </ul>
 </div>
 <%- include("partials/footer") ; -%>

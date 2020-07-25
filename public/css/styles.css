@@ -146,3 +146,29 @@ a {
   color: currentColor;
   text-decoration: none;
 }
+
+.flexbox-container-horiz {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+}
+
+.flexbox-item1 {
+  flex-shrink: 0 ;
+  flex-grow: 1;
+  align-self: center;
+  text-align: center;
+}
+
+.flexbox-container-vert {
+  display: flex ;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.ytd {
+  padding: 1rem;
+}
