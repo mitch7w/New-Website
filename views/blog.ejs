@@ -1,11 +1,13 @@
 <%- include("partials/header") ; -%>
-<div class="textBlock">
-  <h1>Blog</h1>
-  <h2>Longer more thought-out musings about life, technology and stuff.</h2>
-    <% posts.forEach(function(post) { %>
-     <a href="/blog/<%=post.title%>"><%=post.title%></a>
-    <!-- Date, description and link to read whole post -->
-    <% }) %>
-  </ul>
+<h1 class="separateText">Blog</h1>
+<h4 class="separateText">Longer more thought-out musings about life, technology and the universe.</h4>
+
+  
+    <% for(let position = posts.length-1 ; position >-1 ; position--) { %>
+     <div class="blogGrid">
+      <h2 class="blogTitle"><a href="/blog/<%=posts[position].title%>"><%=posts[position].title%></a></h2>
+     <div class="blogDate"><%=posts[position].date%></div>
+     <p class="postDescrip"><%=posts[position].description%></p>
 </div>
+    <% } %>
 <%- include("partials/footer") ; -%>

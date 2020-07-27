@@ -66,10 +66,6 @@ app.get("/blog/:postTitle", function (req, res) {
 });
 
 
-app.get("/portfolio", function (req, res) {
-  res.render("portfolio");
-});
-
 app.get("/about", function (req, res) {
   res.render("about");
 });
