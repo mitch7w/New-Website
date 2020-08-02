@@ -95,39 +95,6 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
-@media (max-width: 600px) {
-  .toggle-button {
-    display: flex;
-  }
-
-  .navbar-links {
-    display: none;
-    width: 100%;
-  }
-
-  .navbar {
-    flex: column;
-    align-items: flex-start;
-  }
-
-  .navbar-links ul {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .navbar-links li {
-    text-align: center;
-  }
-
-  .navbar-links a {
-    padding: 0.5rem 1rem;
-  }
-
-  .navbar-links.active {
-    display: flex;
-  }
-}
-
 .fa {
   color: var(--dark-card-background);
   padding: 1% 2%;
@@ -153,7 +120,6 @@ main {
   justify-content: center;
   align-items: center;
   /* gap: 40px; */
-  padding: 2rem;
   text-align: center;
 }
 
@@ -253,71 +219,94 @@ body {
 
 .row {
   display: flex;
-  flex-wrap: wrap ;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-
-@media only screen and (max-width: 886px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
 }
 
 .column {
-  flex: 50% ;
-  max-width: 50% ;
+  flex: 50%;
+  max-width: 50%;
   align-items: center;
   justify-content: center;
 }
 
-
-@media only screen and (max-width:1040px) {
-  .textBlock1 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .textBlock2 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .textBlock3 {
-    margin-left: 5rem;
-    margin-right: 5rem;
-  }
-}
-
 .textBlock1 {
-  grid-area: textBlock1;
   background-color: var(--dark-card-background);
   border-radius: 1em;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  padding: 2rem ;
+  margin-left: 2rem;
 }
 
 .textBlock2 {
-  grid-area: textBlock2;
   background-color: var(--dark-card-background);
   border-radius: 1em;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding: 2rem;
+  margin: 2rem 0 2rem 0 ;
 }
 
 .textBlock3 {
-  grid-area: textBlock3;
   background-color: var(--dark-card-background);
   border-radius: 1em;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  padding: 2rem;
+  margin: 2rem 2rem 0 2rem;
 }
-
 
 .footer {
   padding-top: 2rem;
   text-align: center;
+}
+
+@media only screen and (max-width: 830px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  .textBlock1 {
+    margin: 3rem;
+    padding: 1rem;
+  }
+
+  .textBlock2 {
+    margin: 3rem;
+    padding: 1rem;
+  }
+
+  .textBlock3 {
+    margin: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar {
+    flex: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-links li {
+    text-align: center;
+  }
+
+  .navbar-links a {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
 }
