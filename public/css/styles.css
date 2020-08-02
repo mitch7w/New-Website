@@ -6,19 +6,15 @@
   font-size: 16px;
   font-family: "Open Sans";
   /* CSS Variables */
-  --text-primary: #b6b6b6;
-  --text-secondary: #ececec;
-  --bg-primary: #23232e;
-  --bg-secondary: #141418;
   --dark-text: #fff;
-  --dark-background:#12181b;
+  --dark-background: #12181b;
   --dark-card-background: #ff6600;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter',  sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Scrollbar styling */
@@ -38,19 +34,19 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--bg-primary);
+  background-color: (--dark-card-background);
 }
 
 .brand-title {
   font-size: 1.5rem;
-  margin 0.5rem;
+  margin: 0.5rem;
   text-decoration: none;
   color: white;
 }
 
 .brand-title a {
   text-decoration: none;
-  padding: 1rem ;
+  padding: 1rem;
   display: block;
 }
 
@@ -143,20 +139,20 @@ a {
 }
 
 @media (hover: hover) {
- a:hover {
-   text-decoration: underline;
- }
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 main {
-  display: grid ;
-  grid-template-areas: 
-  "textBlock1 img1"
-  "img2 textBlock2"
-  "textBlock3 textBlock3";
-  justify-items: center;
+  /* display: grid;
+  grid-template-areas:
+    "textBlock1 img1"
+    "textBlock2 textBlock2"
+    "textBlock3 textBlock3"; */
+  justify-content: center;
   align-items: center;
-  gap: 40px;
+  /* gap: 40px; */
   padding: 2rem;
   text-align: center;
 }
@@ -164,24 +160,24 @@ main {
 .vlogGrid {
   display: grid;
   grid-template-areas:
-  "vlogTitle"
-  "ytd"
-  "vlogText" ;
+    "vlogTitle"
+    "ytd"
+    "vlogText";
   justify-items: center;
   align-items: center;
   gap: 40px;
   padding: 2rem;
   text-align: center;
   background-color: var(--dark-card-background);
-  margin: 5rem ;
-  border-radius: 1rem ;
+  margin: 5rem;
+  border-radius: 1rem;
 }
 
 .blogGrid {
   display: grid;
   grid-template-areas:
-  "blogTitle"  "blogDate" "postDescrip" "postHR";
-  padding: 1rem 2rem 1rem 2rem ;
+    "blogTitle""blogDate""postDescrip""postHR";
+  padding: 1rem 2rem 1rem 2rem;
   text-align: left;
   background-color: var(--dark-card-background);
   margin-left: 5rem;
@@ -216,7 +212,7 @@ main {
 
 .postDescrip {
   grid-area: postDescrip;
-  white-space: pre-line ;
+  white-space: pre-line;
 }
 
 .postHR {
@@ -224,7 +220,7 @@ main {
 }
 
 .separateText {
-  padding-left: 1rem ;
+  padding-left: 1rem;
 }
 
 .separateTextAbout {
@@ -233,11 +229,11 @@ main {
 
 .aboutGrid {
   display: grid;
-  grid-template-areas: 
-  "h1"  "h2"  "p"  "h2"  "p"  "h2"  "p";
+  grid-template-areas:
+    "h1""h2""p""h2""p""h2""p";
   justify-items: center;
   align-items: center;
-  margin: 3rem 5rem 0 5rem;  
+  margin: 3rem 5rem 0 5rem;
   text-align: center;
   background-color: var(--dark-card-background);
   border-radius: 1rem;
@@ -245,23 +241,61 @@ main {
 }
 
 img {
-  height: 300px ;
+  height: 300px;
+  padding: 0;
 }
 
-/* WHITE SPACE BLOCKS NOW */
-
 body {
-  color: var(--dark-text) ;
+  color: var(--dark-text);
   background-color: var(--dark-background);
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap ;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 886px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+.column {
+  flex: 50% ;
+  max-width: 50% ;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media only screen and (max-width:1040px) {
+  .textBlock1 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .textBlock2 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .textBlock3 {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
 }
 
 .textBlock1 {
   grid-area: textBlock1;
   background-color: var(--dark-card-background);
-  border-radius: 1em ;
+  border-radius: 1em;
   padding-left: 5rem;
   padding-right: 5rem;
-  
 }
 
 .textBlock2 {
@@ -278,17 +312,10 @@ body {
   border-radius: 1em;
   padding-left: 3rem;
   padding-right: 3rem;
-  margin-left: 5rem ;
+  margin-left: 5rem;
   margin-right: 5rem;
 }
 
-.img1 {
-  grid-area: img1;
-}
-
-.img2 {
-  grid-area: img2;
-}
 
 .footer {
   padding-top: 2rem;

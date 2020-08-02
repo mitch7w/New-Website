@@ -1,10 +1,10 @@
 //jshint esversion:6
-require("dotenv").config() ; // environment file
+require("dotenv").config(); // environment file
 const express = require("express");
 const app = express();
 const ejs = require("ejs");
-const bodyParser = require("body-parser") ;
-const mongoose = require("mongoose") ;
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 
 
 mongoose.connect(process.env.MONGOURL, {
@@ -15,9 +15,9 @@ mongoose.connect(process.env.MONGOURL, {
 const postSchema = {
   title: String,
   content: String,
-  description: String, 
+  description: String,
   date: String
-} ;
+};
 
 const Post = mongoose.model("Post", postSchema);
 
@@ -37,32 +37,33 @@ app.get("/vlog", function (req, res) {
 });
 
 app.get("/blog", function (req, res) {
-  Post.find({}, function(err, foundPosts) { // find all blog posts
-    if(err) {
+  Post.find({}, function (err, foundPosts) { // find all blog posts
+    if (err) {
       console.log("Error:" + err);
+    } else {
+      res.render("blog", {
+        posts: foundPosts
+      });
     }
-    else {
-      console.log("DB read successfully");
-      res.render("blog", {posts : foundPosts});
-    }
-  }) ;
+  });
 });
 
 app.get("/blog/:postTitle", function (req, res) {
-  const requestedPostTitle = req.params.postTitle ;
-  Post.findOne({title:requestedPostTitle}, function(err,post) {
-    if(err || post === null) { // No such post exists
+  const requestedPostTitle = req.params.postTitle;
+  Post.findOne({
+    title: requestedPostTitle
+  }, function (err, post) {
+    if (err || post === null) { // No such post exists
       res.redirect("/pageNotFound");
-    }
-    else { // post now contains correct post to post
+    } else { // post now contains correct post to post
 
       res.render("blogPost", {
         title: post.title,
         content: post.content,
         date: post.date
-      }) ;
+      });
     }
-  }) ;
+  });
 });
 
 
