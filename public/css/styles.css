@@ -15,6 +15,11 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Inter', sans-serif;
+  color: var(--dark-text);
+  background-color: var(--dark-background);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Scrollbar styling */
@@ -87,7 +92,6 @@ main {
   min-width: 2rem;
   margin: 0 1.5rem;
 }
-
 
 .fa-primary {
   color: black;
@@ -203,7 +207,6 @@ a {
   border-radius: 1rem;
 }
 
-
 .blogTitle {
   padding-bottom: 0;
 }
@@ -248,15 +251,6 @@ img {
   padding: 0;
 }
 
-
-body {
-  color: var(--dark-text);
-  background-color: var(--dark-background);
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -295,6 +289,7 @@ body {
 .footer {
   padding-top: 2rem;
   text-align: center;
+  margin-left: 5rem ;
 }
 
 .separateText {
@@ -350,6 +345,7 @@ body {
 
   .footer {
     margin-bottom: 6rem;
+    margin-left: 0;
   }
 
   a {
