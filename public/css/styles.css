@@ -124,10 +124,6 @@ main {
   transition: 300ms;
 }
 
-.themePressed {
-  background-color: black ;
-}
-
 .logo {
   font-weight: bold;
   text-transform: uppercase;

@@ -6,6 +6,8 @@ const lightIcon = document.getElementById("lightIcon");
 
 if(theme) {
   body.classList.add(theme) ;
+  if (theme === "Light") {
+  }
 }
 else {
   body.classList.add("Light");
@@ -15,10 +17,11 @@ else {
 themeButton.onclick = () => {
   if (theme === "Light") {
     localStorage.setItem("theme", "Dark");
+    themeButton.style.color = "black";
   } else {
     localStorage.setItem("theme", "Light");
   }
   body.classList.toggle("Light");
   body.classList.toggle("Dark");
-  themeButton.classList.toggle("themePressed");
+  
   } ;
