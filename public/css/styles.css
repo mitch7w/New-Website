@@ -100,10 +100,13 @@ main {
   transition: 600ms;
 }
 
-.nav-link:hover {
-  background: var(--bg);
-  color: var(--orange);
+@media not all and (hover: none) {
+  .nav-link:hover {
+    background: var(--bg);
+    color: var(--orange);
+  }
 }
+
 
 .link-text {
   display: none;
