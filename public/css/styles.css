@@ -267,8 +267,9 @@ main {
 }
 
 img {
-  width: 50vh;
+  width: 50vw;
   padding: 0;
+  margin: 0;
 }
 
 .row {
