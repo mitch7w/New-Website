@@ -17,11 +17,9 @@ else {
 themeButton.onclick = () => {
   if (theme === "Light") {
     localStorage.setItem("theme", "Dark");
-    themeButton.style.color = "black";
   } else {
     localStorage.setItem("theme", "Light");
   }
   body.classList.toggle("Light");
   body.classList.toggle("Dark");
-  
   } ;
