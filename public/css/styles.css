@@ -6,17 +6,44 @@
   font-size: 16px;
   font-family: "Open Sans";
   /* CSS Variables */
-  --dark-text: #fff;
-  --dark-background: #12181b;
-  --dark-card-background: #ff6600;
+   --gray0: #f8f8f8;
+   --gray1: #dbe1e8;
+   --gray2: #b2becd;
+   --gray3: #6c7983;
+   --gray4: #454e56;
+   --gray5: #2a2e35;
+   --gray6: #12181b;
+  --orange: #ff5722;
+  --red: #dd2c00 ;
+  --white: #fff;
+  --black: #000 ;
+  --light-blue: #b2ebf2;
+  --dark-blue: #00bcd4 ;
+  --card-background: var(--orange) ;
+}
+
+.lightPressed {
+  color: black;
+}
+
+.Light {
+  --bg: var(--gray0) ;
+  --bg-nav: var(--dark-blue);
+  --text-color: var(--gray6) ;
+}
+
+.Dark {
+  --bg: var(--gray6);
+  --bg-nav: var(--dark-blue);
+  --text-color: var(--gray0);
 }
 
 body {
   padding: 0;
   margin: 0;
   font-family: 'Inter', sans-serif;
-  color: var(--dark-text);
-  background-color: var(--dark-background);
+  color: var(--text-color);
+  background-color: var(--bg);
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -29,11 +56,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #1e1e24;
+  background: var(--bg);
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #ff8533;
+  background: var(--orange);
 }
 
 /* NEW NAV BAR */
@@ -44,7 +71,7 @@ main {
 
 .navbar {
   position: fixed;
-  background-color: purple;
+  background-color: var(--bg-nav);
   transition: 200ms ease;
   z-index: 1;
 }
@@ -71,7 +98,7 @@ main {
   display: flex;
   align-items: center;
   height: 5rem;
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   filter: grayscale(100%) opacity(0.7);
   transition: 600ms;
@@ -79,8 +106,8 @@ main {
 
 .nav-link:hover {
   filter: grayscale(0%) opacity(1);
-  background: black;
-  color: orange;
+  background: var(--bg);
+  color: var(--orange);
 }
 
 .link-text {
@@ -94,12 +121,12 @@ main {
 }
 
 .fa-primary {
-  color: black;
+  color: var(--gray0);
   transition: 600ms;
 }
 
 .fa-secondary {
-  color: grey;
+  color: var(--gray0);
   transition: 600ms;
 }
 
@@ -108,7 +135,7 @@ main {
   text-transform: uppercase;
   margin-bottom: 1rem;
   text-align: start ;
-  color: orange;
+  color: var(--orange);
   font-size: 1.5rem;
   letter-spacing: 0.3ch;
   width: 100%;
@@ -128,7 +155,7 @@ main {
 }
 
 .fa {
-  color: var(--dark-card-background);
+  color: var(--card-background);
   padding: 1% 2%;
 }
 
@@ -154,7 +181,7 @@ a {
   gap: 40px;
   padding: 2rem;
   text-align: center;
-  background-color: var(--dark-card-background);
+  background-color: var(--card-background);
   margin: 5rem 5rem 5rem 10rem;
   border-radius: 1rem;
 }
@@ -185,7 +212,7 @@ a {
     "blogTitle""blogDate""postDescrip""postHR";
   padding: 1rem 2rem 1rem 2rem;
   text-align: left;
-  background-color: var(--dark-card-background);
+  background-color: var(--card-background);
   margin-left: 5rem;
   margin-right: 5rem;
   margin-top: 2rem;
@@ -199,7 +226,7 @@ a {
     "blogTitle""blogDate""postDescrip""postHR";
   padding: 1rem 2rem 2rem 2rem;
   text-align: left;
-  background-color: var(--dark-card-background);
+  background-color: var(--card-background);
   margin-left: 10rem;
   margin-right: 5rem;
   margin-top: 2rem;
@@ -241,7 +268,7 @@ a {
   align-items: center;
   margin: 3rem 5rem 0 10rem;
   text-align: center;
-  background-color: var(--dark-card-background);
+  background-color: var(--card-background);
   border-radius: 1rem;
   padding: 0rem 2rem 1rem 2rem;
 }
@@ -266,21 +293,22 @@ img {
 }
 
 .textBlock1 {
-  background-color: var(--dark-card-background);
+  background-color: var(--card-background);
   border-radius: 1em;
   padding: 2rem;
   margin-left: 2rem;
+  margin-top: 1rem;
 }
 
 .textBlock2 {
-  background-color: var(--dark-card-background);
+  background-color: var(--card-background);
   border-radius: 1em;
   padding: 2rem;
   margin: 2rem 0 2rem 0;
 }
 
 .textBlock3 {
-  background-color: var(--dark-card-background);
+  background-color: var(--card-background);
   border-radius: 1em;
   padding: 2rem;
   margin: 2rem 2rem 0 2rem;
@@ -317,7 +345,6 @@ img {
     margin: 3rem;
   }
 }
-
 
 /* Small screens */
 @media only screen and (max-width: 600px) {
