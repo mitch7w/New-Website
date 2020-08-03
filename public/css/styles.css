@@ -20,6 +20,7 @@ body {
 /* Scrollbar styling */
 body::-webkit-scrollbar {
   width: 0.25rem;
+  height: 0.25rem;
 }
 
 body::-webkit-scrollbar-track {
@@ -40,6 +41,7 @@ main {
   position: fixed;
   background-color: purple;
   transition: 200ms ease;
+  z-index: 1;
 }
 
 .navbar-nav {
@@ -117,119 +119,9 @@ main {
   transform: rotate(-180deg);
 }
 
-/* Small screens */
-@media only screen and (max-width: 600px) {
-  .navbar {
-    bottom:0 ;
-    width: 100vw ;
-    height: 5rem;
-  }
-
-  .logo {
-    display: none ;
-  }
-
-  .navbar-nav {
-    flex-direction: row;
-  }
-
-  .nav-link {
-    justify-content: center;
-  }
-
-  main {
-    margin: 0;
-  }
-
-}
-
-
-/* Large screens */
-@media only screen and (min-width: 600px) {
-  .navbar {
-    top: 0 ;
-    width: 5rem;
-    height: 100vh;
-  }
-
-.navbar-nav {
-  flex-direction: column;
-}
-  .navbar:hover {
-    width: 16rem;
-  }
-
-  .navbar:hover .link-text {
-    display: inline;
-  }
-}
-
-
-/* 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: (--dark-card-background);
-}
-
-.brand-title {
-  font-size: 1.5rem;
-  margin: 0.5rem;
-  text-decoration: none;
-  color: white;
-}
-
-.brand-title a {
-  text-decoration: none;
-  padding: 1rem;
-  display: block;
-}
-
-
-.brand-title:hover a {
-  background-color: #ff5500;
-  text-decoration: none;
-}
-
-.navbar-links ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.navbar-links li {
-  list-style: none;
-}
-
-.navbar-links li:hover {
-  background-color: #ff5500;
-}
-
-.navbar-links li a {
-  text-decoration: none;
-  color: white;
-  padding: 1rem;
-  display: block;
-}
-
-.toggle-button {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+#homeLink {
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
 }
-
-.toggle-button .bar {
-  height: 3px;
-  width: 30px;
-  background-color: white;
-  border-radius: 10px;
-} */
 
 .fa {
   color: var(--dark-card-background);
@@ -247,7 +139,6 @@ a {
   }
 }
 
-
 .vlogGrid {
   display: grid;
   grid-template-areas:
@@ -260,8 +151,28 @@ a {
   padding: 2rem;
   text-align: center;
   background-color: var(--dark-card-background);
-  margin: 5rem;
+  margin: 5rem 5rem 5rem 10rem;
   border-radius: 1rem;
+}
+
+.ytd {
+  grid-area: ytd ;
+}
+
+.aspect-ratio {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  /* The height of the item will now be 56.25% of the width. */
+}
+
+.aspect-ratio iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 
 .blogGrid {
@@ -285,7 +196,7 @@ a {
   padding: 1rem 2rem 2rem 2rem;
   text-align: left;
   background-color: var(--dark-card-background);
-  margin-left: 5rem;
+  margin-left: 10rem;
   margin-right: 5rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -316,6 +227,7 @@ a {
 
 .separateTextAbout {
   text-align: center;
+  margin-left: 5rem;
 }
 
 .aboutGrid {
@@ -324,7 +236,7 @@ a {
     "h1""h2""p""h2""p""h2""p";
   justify-items: center;
   align-items: center;
-  margin: 3rem 5rem 0 5rem;
+  margin: 3rem 5rem 0 10rem;
   text-align: center;
   background-color: var(--dark-card-background);
   border-radius: 1rem;
@@ -335,6 +247,7 @@ img {
   height: 300px;
   padding: 0;
 }
+
 
 body {
   color: var(--dark-text);
@@ -405,35 +318,89 @@ body {
   }
 }
 
-@media (max-width: 600px) {
-  .toggle-button {
-    display: flex;
-  }
 
-  .navbar-links {
-    display: none;
-    width: 100%;
-  }
-
+/* Small screens */
+@media only screen and (max-width: 600px) {
   .navbar {
-    flex: column;
-    align-items: flex-start;
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
   }
 
-  .navbar-links ul {
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+
+  .footer {
+    margin-bottom: 6rem;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .fa {
+    text-decoration: none;
+  }
+
+  .individualBlogGrid {
+    padding: 1rem 2rem 2rem 2rem;
+    margin: 2rem;
+  }
+
+  .blogGrid {
+    padding: 1rem 2rem 1rem 2rem;
+    margin: 2rem 1rem 2rem 1rem ;
+  }
+
+  .aboutGrid {
+    margin: 3rem 1rem 0 1rem;
+    padding: 0rem 2rem 1rem 2rem;
+  }
+
+  .separateTextAbout {
+    margin-left: 0;
+  }
+
+  .vlogGrid {
+    margin: 2rem 1rem 2rem 1rem;
+  }
+
+  #homeLink {
+    display:block ;
+  }
+}
+
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .navbar-nav {
     flex-direction: column;
-    width: 100%;
   }
 
-  .navbar-links li {
-    text-align: center;
+  .navbar:hover {
+    width: 16rem;
   }
 
-  .navbar-links a {
-    padding: 0.5rem 1rem;
-  }
-
-  .navbar-links.active {
-    display: flex;
+  .navbar:hover .link-text {
+    display: inline;
   }
 }
