@@ -15,9 +15,10 @@ else {
 themeButton.onclick = () => {
   if (theme === "Light") {
     localStorage.setItem("theme", "Dark");
-    lightIcon.classList.toggle("lightPressed") ;
+    lightIcon.classList.add("lightPressed") ;
   } else {
     localStorage.setItem("theme", "Light");
+    lightIcon.classList.remove("lightPressed");
   }
   body.classList.toggle("Light");
   body.classList.toggle("Dark");
