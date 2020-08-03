@@ -244,7 +244,7 @@ a {
 }
 
 img {
-  height: 300px;
+  width: 50vh;
   padding: 0;
 }
 
@@ -295,6 +295,11 @@ body {
 .footer {
   padding-top: 2rem;
   text-align: center;
+}
+
+.separateText {
+  margin-left: 1rem ;
+  margin-right: 1rem;
 }
 
 @media only screen and (max-width: 830px) {
