@@ -20,4 +20,5 @@ themeButton.onclick = () => {
   }
   body.classList.toggle("Light");
   body.classList.toggle("Dark");
+  themeButton.classList.toggle("themePressed");
   } ;

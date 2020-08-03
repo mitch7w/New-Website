@@ -116,13 +116,16 @@ main {
 }
 
 .fa-primary {
-  color: var(--bg);
-  transition: 600ms;
+  color: currentColor ;
 }
 
 .fa-secondary {
-  color: var(--bg);
-  transition: 600ms;
+  color: currentColor ;
+  transition: 300ms;
+}
+
+.themePressed {
+  background-color: black ;
 }
 
 .logo {
