@@ -22,10 +22,6 @@
   --card-background: var(--orange) ;
 }
 
-.lightPressed {
-  fill: black;
-}
-
 .Light {
   --bg: var(--gray0) ;
   --bg-nav: var(--dark-blue);
@@ -72,6 +68,7 @@ main {
 .navbar {
   position: fixed;
   background-color: var(--bg-nav);
+  color: var(--bg-nav);
   transition: 200ms ease;
   z-index: 1;
 }
@@ -100,12 +97,10 @@ main {
   height: 5rem;
   color: var(--text-color);
   text-decoration: none;
-  filter: grayscale(100%) opacity(0.7);
   transition: 600ms;
 }
 
 .nav-link:hover {
-  filter: grayscale(0%) opacity(1);
   background: var(--bg);
   color: var(--orange);
 }
@@ -121,12 +116,12 @@ main {
 }
 
 .fa-primary {
-  color: var(--gray0);
+  color: var(--bg);
   transition: 600ms;
 }
 
 .fa-secondary {
-  color: var(--gray0);
+  color: var(--bg);
   transition: 600ms;
 }
 
@@ -159,10 +154,6 @@ main {
   padding: 1% 2%;
 }
 
-a {
-  color: currentColor;
-  text-decoration: none;
-}
 
 @media (hover: hover) {
   a:hover {
@@ -323,6 +314,11 @@ img {
 .separateText {
   margin-left: 1rem ;
   margin-right: 1rem;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 830px) {
